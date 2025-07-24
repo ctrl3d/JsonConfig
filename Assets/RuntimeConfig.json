@@ -1,0 +1,30 @@
+{
+  "application": {
+    "runInBackground": true,
+    "targetFrameRate": 60
+  },
+  "screen": {
+    "x": 0,
+    "y": 0,
+    "width": 1280,
+    "height": 720,
+    "fullScreen": false
+  },
+  "quality": {
+    "vSyncCount": 0,
+    "qualityLevel": 5
+  },
+  "audio": {
+    "volume": 1.0
+  },
+  "camera": {
+    "backgroundColor": "#000000",
+    "fieldOfView": 60.0,
+    "nearClipPlane": 0.3,
+    "farClipPlane": 1000.0
+  },
+  "window": {
+    "popupWindow": false,
+    "zOrder": "TOP"
+  }
+}
