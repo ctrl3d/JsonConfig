@@ -3,7 +3,7 @@ using System.IO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
-#if UNITASK_SUPPORT
+#if USE_UNITASK
 using Cysharp.Threading.Tasks;
 using System.Threading;
 #endif
@@ -20,7 +20,7 @@ namespace work.ctrl3d
         private readonly string _filePath;
         private readonly object _lockObject = new();
 
-#if UNITASK_SUPPORT
+#if USE_UNITASK
         private readonly SemaphoreSlim _semaphore = new(1, 1);
 #endif
 
@@ -36,7 +36,7 @@ namespace work.ctrl3d
             _filePath = filePath;
         }
 
-#if UNITASK_SUPPORT
+#if USE_UNITASK
         // --------------------------------------------------------------------------------
         // 비동기 메서드 (UniTask)
         // --------------------------------------------------------------------------------
@@ -556,7 +556,7 @@ namespace work.ctrl3d
             return JsonConfigResult<T>.Failure(message, JsonConfigError.IOError);
         }
 
-#if UNITASK_SUPPORT
+#if USE_UNITASK
         // IDisposable 구현 (SemaphoreSlim 정리용)
         public void Dispose() => _semaphore?.Dispose();
 #endif

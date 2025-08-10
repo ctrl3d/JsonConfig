@@ -12,12 +12,10 @@ namespace work.ctrl3d.JsonConfig
     public class PackageInstaller
     {
         private const string UniTaskName = "com.cysharp.unitask";
-
         private const string UniTaskGitUrl =
             "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask";
 
         private const string UnityExtensionsName = "work.ctrl3d.unity-extensions";
-
         private const string UnityExtensionsGitUrl =
             "https://github.com/ctrl3d/UnityExtensions.git?path=Assets/UnityExtensions";
 
@@ -25,9 +23,6 @@ namespace work.ctrl3d.JsonConfig
         {
             var isUniTaskInstalled = CheckPackageInstalled(UniTaskName);
             if (!isUniTaskInstalled) AddGitPackage(UniTaskName, UniTaskGitUrl);
-
-            if (HasScriptingDefineSymbol("UNITASK_SUPPORT")) return;
-            AddScriptingDefineSymbol("UNITASK_SUPPORT");
 
             var isUnityExtensionsInstalled = CheckPackageInstalled(UnityExtensionsName);
             if (!isUnityExtensionsInstalled) AddGitPackage(UnityExtensionsName, UnityExtensionsGitUrl);
